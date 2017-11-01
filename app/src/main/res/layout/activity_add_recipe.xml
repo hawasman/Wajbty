@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="18dp"
+    android:orientation="vertical"
+    tools:context="com.madminds.wajbty.AddRecipe"
+    android:weightSum="1">
+
+    <EditText
+        android:id="@+id/meal_name"
+        style="@android:style/Widget.Material.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:fontFamily="serif"
+        android:hint="اسم الوجبة"
+        android:textAppearance="@android:style/TextAppearance.Material"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteY="62dp" />
+
+    <EditText
+        android:id="@+id/recipe_text"
+        style="@android:style/Widget.Material.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="8dp"
+        android:fontFamily="serif"
+        android:gravity="top|right"
+        android:hint="الوصفة"
+        android:textAlignment="textStart"
+        android:textAppearance="@android:style/TextAppearance.Material"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/meal_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="8dp"
+        app:srcCompat="?attr/colorButtonNormal" />
+
+    <Button
+        android:id="@+id/btn_add_recipe"
+        style="@android:style/Widget.Material.Button.Borderless"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:fontFamily="serif"
+        android:text="اضافة"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Widget.Button"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</LinearLayout>
