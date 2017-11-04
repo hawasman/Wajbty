@@ -40,7 +40,7 @@ public class HomeFragment extends Fragment {
     private final String TABLE_NAME = "recipes";
     public final String DATABASE_NAME = "localRecipe";
     SQLiteDatabase myDatabase;
-    final String HOST_IP = "http://192.168.1.101";
+    final String HOST_IP = "http://192.168.1.100";
     final String HTTP_JSON_URL = HOST_IP + "/android/getalldata.php";
 
     private List<recipeItem> recipeItemList = new ArrayList<>();

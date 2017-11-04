@@ -29,9 +29,8 @@
         android:layout_height="150dp"
         android:layout_margin="8dp"
         android:fontFamily="serif"
-        android:gravity="top|right"
         android:hint="الوصفة"
-        android:textAlignment="textStart"
+        android:gravity="top"
         android:textAppearance="@android:style/TextAppearance.Material"
         android:textSize="18sp"
         android:textStyle="bold" />

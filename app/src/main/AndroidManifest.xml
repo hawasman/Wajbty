@@ -3,6 +3,7 @@
     package="com.madminds.wajbty">
 
     <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
+    <uses-permission-sdk android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
