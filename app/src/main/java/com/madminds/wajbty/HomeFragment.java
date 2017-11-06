@@ -40,8 +40,8 @@ public class HomeFragment extends Fragment {
     private final String TABLE_NAME = "recipes";
     public final String DATABASE_NAME = "localRecipe";
     SQLiteDatabase myDatabase;
-    final String HOST_IP = "http://192.168.1.100";
-    final String HTTP_JSON_URL = HOST_IP + "/android/getalldata.php";
+    final String HOST_IP = "http://wajbty.atwebpages.com";
+    final String HTTP_JSON_URL = HOST_IP + "/getalldata.php";
 
     private List<recipeItem> recipeItemList = new ArrayList<>();
 
@@ -156,9 +156,10 @@ public class HomeFragment extends Fragment {
 
                                 recipe.setrName(json.getString("name"));
                                 recipe.setuName(json.getString("username"));
-                                recipe.setrImg(HOST_IP + json.getString("image"));
+                                recipe.setrImg(json.getString("image"));
                                 recipe.setRecipe(json.getString("recipe"));
-                                recipe.setuImg(HOST_IP + json.getString("uimage"));
+                                recipe.setuImg(json.getString("uimage"));
+                                Log.wtf("WTF",json.getString("image") + "," + json.getString("uimage"));
 
                             } catch (JSONException e) {
 

@@ -1,12 +1,14 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.madminds.wajbty.ProfileFragment">
 
 
     <android.support.design.widget.TabLayout
+        android:id="@+id/profile_tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabIndicatorColor="@color/background_text">
@@ -23,4 +25,11 @@
             android:layout_height="wrap_content"
             android:text="Account" />
     </android.support.design.widget.TabLayout>
-</FrameLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/profile_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v4.view.ViewPager>
+</LinearLayout>

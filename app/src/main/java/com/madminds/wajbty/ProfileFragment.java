@@ -3,7 +3,11 @@ package com.madminds.wajbty;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +26,9 @@ public class ProfileFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -64,7 +71,13 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view =  inflater.inflate(R.layout.fragment_profile, container, false);
+        viewPager = (ViewPager)view.findViewById(R.id.profile_view);
+        tabLayout = (TabLayout)view.findViewById(R.id.profile_tablayout);
+        ProfileAdapter profileAdapter = new ProfileAdapter(getFragmentManager());
+        viewPager.setAdapter(profileAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -103,5 +116,45 @@ public class ProfileFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    class ProfileAdapter extends FragmentStatePagerAdapter{
+
+        public ProfileAdapter(FragmentManager fragmentManager){
+            super(fragmentManager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            Fragment fragment = null;
+            switch (position){
+                case 0:
+                    fragment = new FavoriteFragment();
+                    break;
+                case 1:
+                    fragment = new AccountFragment();
+                    break;
+            }
+            return fragment;
+        }
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            String name = null;
+            switch (position){
+                case 0:
+                    name = "Favorite";
+                    break;
+                case 1:
+                    name = "Account";
+                    break;
+            }
+            return name;
+        }
     }
 }

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.tab_settings:
-                        transaction.replace(R.id.content,new SettingsFragment()).commit();
+                        //transaction.replace(R.id.content,new SettingsFragment()).commit();
                         Toast.makeText(MainActivity.this,"settings",Toast.LENGTH_LONG).show();
                         break;
                 }

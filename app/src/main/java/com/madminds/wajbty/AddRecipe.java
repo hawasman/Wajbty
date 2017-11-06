@@ -33,7 +33,7 @@ public class AddRecipe extends AppCompatActivity {
     ImageView image;
     Button btn;
     Bitmap photo;
-    String URL = "http://192.168.1.100/android/upload.php";
+    String URL = "http://wajbty.atwebpages.com/upload.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,8 +66,11 @@ public class AddRecipe extends AppCompatActivity {
     }
     private void uploadImage() {
         ProgressDialog progressDialog = new ProgressDialog(AddRecipe.this);
+        progressDialog.setTitle("وصفتي");
         progressDialog.setMessage("جاري الاضافة...");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
+        progressDialog.setCancelable(false);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -96,7 +99,7 @@ public class AddRecipe extends AppCompatActivity {
         };
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
-        progressDialog.hide();
+        progressDialog.dismiss();
     }
 
     @Override
