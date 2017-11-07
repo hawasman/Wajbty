@@ -21,11 +21,4 @@
         android:entryValues="@android:array/phoneTypes"
         android:key="list_preference_1"
         android:title="List preference" />
-    <PreferenceCategory android:title="Preference category">
-
-        <RingtonePreference
-            android:defaultValue=""
-            android:key="ringtone_preference_1"
-            android:title="Ringtone preference" />
-    </PreferenceCategory>
 </PreferenceScreen>

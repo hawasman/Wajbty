@@ -55,4 +55,10 @@
         android:textAppearance="@android:style/TextAppearance.Material.Widget.Button"
         android:textSize="24sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 </LinearLayout>

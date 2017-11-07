@@ -30,17 +30,14 @@ public class MainActivity extends AppCompatActivity {
                 switch (tabId){
                     case R.id.tab_home:
                         transaction.replace(R.id.content,new HomeFragment()).commit();
-                        Toast.makeText(MainActivity.this,"home",Toast.LENGTH_LONG).show();
                         break;
 
                     case R.id.tab_profile:
                         transaction.replace(R.id.content,new ProfileFragment()).commit();
-                        Toast.makeText(MainActivity.this,"profile",Toast.LENGTH_LONG).show();
                         break;
 
                     case R.id.tab_settings:
-                        //transaction.replace(R.id.content,new SettingsFragment()).commit();
-                        Toast.makeText(MainActivity.this,"settings",Toast.LENGTH_LONG).show();
+                        transaction.replace(R.id.content,new SettingsFragment()).commit();
                         break;
                 }
             }

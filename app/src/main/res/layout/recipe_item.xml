@@ -3,89 +3,92 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:layout_margin="8dp"
+    android:layout_height="205dp"
+    android:layout_margin="5dp"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackground"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="11dp">
+        android:visibility="visible"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
 
-        <FrameLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/bb_inActiveBottomBarItemColor">
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/rImage"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/rimage" />
+                android:layout_height="150dp"
+                android:background="@color/bb_inActiveBottomBarItemColor">
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:srcCompat="@color/black_transparent" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/rName"
+                <ImageView
+                    android:id="@+id/rImage"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="IceCream Cake"
-                    android:textAlignment="center"
-                    android:textColor="?attr/colorButtonNormal"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/rimage" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@color/black_transparent" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/uName"
+                        android:id="@+id/rName"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="5dp"
-                        android:layout_weight="1"
-                        android:gravity="fill_vertical|right"
-                        android:text="TextView"
-                        android:textAlignment="gravity"
+                        android:layout_height="wrap_content"
+                        android:text="IceCream Cake"
+                        android:textAlignment="center"
                         android:textColor="?attr/colorButtonNormal"
-                        android:textSize="18sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_margin="5dp"
-                        app:cardCornerRadius="10dp">
-
-                        <ImageView
-                            android:id="@+id/uImage"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:srcCompat="@drawable/uimage" />
-                    </android.support.v7.widget.CardView>
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </FrameLayout>
 
-        </FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/uName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:gravity="fill_vertical|right"
+                    android:paddingRight="5dp"
+                    android:text="TextView"
+                    android:textAlignment="gravity"
+                    android:textColor="?attr/colorControlNormal"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/uImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="8dp"
+                    android:padding="5dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/uimage" />
+
+            </LinearLayout>
+        </LinearLayout>
+
     </android.support.v7.widget.CardView>
 
 </RelativeLayout>

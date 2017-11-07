@@ -40,7 +40,7 @@ public class HomeFragment extends Fragment {
     private final String TABLE_NAME = "recipes";
     public final String DATABASE_NAME = "localRecipe";
     SQLiteDatabase myDatabase;
-    final String HOST_IP = "http://wajbty.atwebpages.com";
+    final String HOST_IP = "https://wajbty.000webhostapp.com";
     final String HTTP_JSON_URL = HOST_IP + "/getalldata.php";
 
     private List<recipeItem> recipeItemList = new ArrayList<>();

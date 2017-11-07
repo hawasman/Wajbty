@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -30,10 +31,11 @@ import java.util.Map;
 
 public class AddRecipe extends AppCompatActivity {
     EditText name,recipe;
+    TextView textView;
     ImageView image;
     Button btn;
     Bitmap photo;
-    String URL = "http://wajbty.atwebpages.com/upload.php";
+    String URL = "https://wajbty.000webhostapp.com/upload.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,7 @@ public class AddRecipe extends AppCompatActivity {
         name = (EditText)findViewById(R.id.meal_name);
         recipe = (EditText)findViewById(R.id.recipe_text);
         image = (ImageView)findViewById(R.id.meal_image);
+        textView = (TextView) findViewById(R.id.textView);
         btn = (Button)findViewById(R.id.btn_add_recipe);
         image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +62,7 @@ public class AddRecipe extends AppCompatActivity {
 
     public String getStringFromBitmap(Bitmap bitmap){
         ByteArrayOutputStream byteIO = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteIO);
+        bitmap.compress(Bitmap.CompressFormat.JPEG,0,byteIO);
         byte[] imgByte = byteIO.toByteArray();
         String output = Base64.encodeToString(imgByte,Base64.DEFAULT);
         return output;
@@ -74,6 +77,7 @@ public class AddRecipe extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                textView.setText(response);
                 Toast.makeText(getApplicationContext(),response,Toast.LENGTH_LONG).show();
                 Log.wtf("WTF",response);
             }
@@ -82,6 +86,7 @@ public class AddRecipe extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_LONG).show();
                 Log.wtf("WTF",error.toString());
+                textView.setText(error.getMessage());
             }
         }){
             @Override
