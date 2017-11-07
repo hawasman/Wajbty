@@ -35,7 +35,7 @@ public class AddRecipe extends AppCompatActivity {
     ImageView image;
     Button btn;
     Bitmap photo;
-    String URL = "https://wajbty.000webhostapp.com/upload.php";
+    String URL = "http://192.168.1.100/android/upload.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -60,7 +60,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        addPreferencesFromResource(R.xml.settings);
+        //addPreferencesFromResource(R.xml.settings);
     }
 
     @Override
