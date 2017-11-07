@@ -1,9 +1,10 @@
 package com.madminds.wajbty;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.app.Activity;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,7 +13,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
-public class RecipeActivity extends Activity {
+public class RecipeActivity extends AppCompatActivity {
     ImageView meal,user_image;
     TextView recipe_full,user_name;
     Toolbar toolbar;
@@ -32,6 +33,9 @@ public class RecipeActivity extends Activity {
         recipe_full.setText(getIntent().getExtras().getString("recipe"));
         user_name.setText(getIntent().getExtras().getString("uname"));
         toolbar.setTitle(getIntent().getExtras().getString("rname"));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -22,7 +22,11 @@
         <activity android:name=".AddRecipe" />
         <activity
             android:name=".RecipeActivity"
-            android:label="@string/title_activity_recipe"></activity>
+            android:label="@string/title_activity_recipe"
+            android:theme="@style/AppTheme.NoActionBar">></activity>
+        <meta-data
+            android:name="CLOUDINARY_URL"
+            android:value="cloudinary://638951816456322:XE7rCn4F8SMdbbrrsPI0w8Ub2P4@hawasman"/>
     </application>
 
 </manifest>
